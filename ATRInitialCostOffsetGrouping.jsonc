@@ -1,0 +1,78 @@
+{
+    "ATRInitialCostOffsetGrouping": {
+        //Checks the pairs Current/Previous Average True Range Percent Values against the Market and adjusts the INITIAL Cost By offset percentage (Safety Protection)	(Position Management) 26.06
+        "Condition": "([pair.Atrp(3)] - [pair.Previous.Atrp(3)]) *6.5 <= [config.Atrpd3] && ([market.TopCoinsAtrpAverage(3)] - [market.Previous.TopCoinsAtrpAverage(3)]) *6.5 <= [config.MarketAtrpd3]",
+        "Configs": [
+            {
+                // x6.5 multiplyer // NOT WORKING
+                "Atrpd3": "-1.4", //difference between pair atrp and previous value
+                "MarketAtrpd3": "-1.4", //difference between market atrp and previous value
+                "InitialCostOffset": "-35"
+            },
+            {
+                "Atrpd3": "-1.2",
+                "MarketAtrpd3": "-1.2",
+                "InitialCostOffset": "-30"
+            },
+            {
+                "Atrpd3": "-1",
+                "MarketAtrpd3": "-1",
+                "InitialCostOffset": "-25"
+            },
+            {
+                "Atrpd3": "-0.8",
+                "MarketAtrpd3": "-0.8",
+                "InitialCostOffset": "-20"
+            },
+            {
+                "Atrpd3": "-0.6",
+                "MarketAtrpd3": "-0.6",
+                "InitialCostOffset": "-15"
+            },
+            {
+                "Atrpd3": "-0.4",
+                "MarketAtrpd3": "-0.4",
+                "InitialCostOffset": "-10"
+            },
+            {
+                "Atrpd3": "-0.2",
+                "MarketAtrpd3": "-0.2",
+                "InitialCostOffset": "-5"
+            },
+            {
+                "Atrpd3": "0.0",
+                "MarketAtrpd3": "0.0"
+            },
+            {
+                "Atrpd3": "0.2",
+                "MarketAtrpd3": "0.2",
+                "InitialCostOffset": "5"
+            },
+            {
+                "Atrpd3": "0.4",
+                "MarketAtrpd3": "0.4",
+                "InitialCostOffset": "10"
+            },
+            {
+                "Atrpd3": "0.6",
+                "MarketAtrpd3": "0.6",
+                "InitialCostOffset": "15"
+            },
+            {
+                "Atrpd3": "0.8",
+                "MarketAtrpd3": "0.8",
+                "InitialCostOffset": "20"
+            },
+            {
+                "Atrpd3": "1",
+                "MarketAtrpd3": "1",
+                "InitialCostOffset": "25"
+            },
+            {
+                "Atrpd3": "1.2",
+                "MarketAtrpd3": "1.2",
+                "InitialCostOffset": "30"
+            }
+        ]
+    },
+}

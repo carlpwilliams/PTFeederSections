@@ -1,0 +1,20 @@
+{
+    "PendingPositionManagmentSafetyGrouping": {
+        //this condition will offset the max trading pairs based off how many coins are in pending 30.06 (Position Management)(Safety Protection)
+        "Condition": "[positions.PendingCoinCount] >= [config.PendingCount]",
+        "Configs": [
+            {
+                "PendingCount": "1",
+                "MaxTradingPairsOffset": "-15"
+            },
+            {
+                "PendingCount": "2",
+                "MaxTradingPairsOffset": "-25"
+            },
+            {
+                "PendingCount": "3",
+                "MaxTradingPairsOffset": "-35"
+            }
+        ]
+    }
+}

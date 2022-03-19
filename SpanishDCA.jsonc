@@ -1,0 +1,28 @@
+{
+    // EMA Based Default Strategy // ** NEEDS OPTIMIZING lvl 1 risk
+    "SpanishDCAGrouping": {
+        //Aggressive Dca strategy when 1,4hr Topcoinschange% is more than x% and EMA short is over the long  . 2.07 (Alternate Buy Strategy)
+        "Condition": "[market.TopCoinsChange(2)] >= [config.TopCoinTrendChange2] && [market.TopCoinsChange(3)] >= [config.TopCoinTrendChange3] && [pair.Volume] >= [config.Volume] && [pair.ShortEma] >= [pair.LongEma] && [pair.PercentageChange(4)] >= -4 && [pair.PercentageChange(4)] < 7",
+        "Configs": [
+            {
+                //needs conditions changed/optimized
+                "TopCoinTrendChange2": "0.5",
+                "TopCoinTrendChange3": "1",
+                "Volume": "2500000",
+                "DcaBuyPercentage1Offset": "10", // added 4/9
+                "DcaBuyPercentage2Offset": "20",
+                "DcaBuyPercentage3Offset": "30",
+                "DcaBuyPercentage4Offset": "40",
+                "DcaBuyPercentage5Offset": "50",
+                //needs offsets here
+                // decrease trailing buy
+                "Override": {
+                    "DcaBuyMaxChangePercentage": "7",
+                    "InsertSnippets": "SpanishCrossDcaBuy,AggressiveDcaTrig,AndersonDca%",
+                    //needs saftey conditions here
+                    "Weight": "880"
+                }
+            }
+        ]
+    }
+}

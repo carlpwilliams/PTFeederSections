@@ -1,0 +1,12 @@
+{
+    "MaxDCALimitSafetyGrouping": {
+        //Keeps the bot from over extending when you reach max dca limit of 9   (Safety Protection) (Position Management) 30.06
+        "Condition": "[positions.DcaCoinCount] >= [config.DcaCoinCount] ",
+        "Configs": [
+            {
+                "DcaCoinCount": "9"
+                //"MaxTradingPairsOffset": "-20"
+            }
+        ]
+    }
+}

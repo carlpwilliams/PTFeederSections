@@ -1,0 +1,16 @@
+{
+    "IncreasedTradingPairsGrouping": {
+        //this condition increases the max trading pairs when your exposure is less/equal to x% of TCV (Position Management) 30.06
+        "Condition": "(([positions.TotalPairsBoughtCost] + [positions.TotalDcaBoughtCost] + [positions.TotalPendingBoughtCost]) / ([positions.RealBalance] + [positions.TotalPairsBoughtCost] + [positions.TotalDcaBoughtCost] + [positions.TotalPendingBoughtCost])) * 100 <= [config.Exposure]",
+        "Configs": [
+            {
+                "Exposure": "45",
+                "MaxTradingPairsOffset": "30" // increase pairs by 30%
+            },
+            {
+                "Exposure": "13",
+                "MaxTradingPairsOffset": "15" // increase pairs by 15%
+            }
+        ]
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "IncreasedPairsExposurePositionGrouping": {
+        //(Position Management)
+        // as the percentage of totalPairsBought to current value increases -- reduce the profit gain to sell
+        "Condition": "(([positions.TotalPairsCurrentValue] - [positions.TotalPairsBoughtCost]) / [positions.TotalPairsBoughtCost]) * 100 < [config.MaxPosition]",
+        "Configs": [
+            {
+                "MaxPosition": "-6",
+                "ASellValueOffset": "-25",
+                "DcaASellValueOffset": "-25"
+            },
+            {
+                "MaxPosition": "-3",
+                "ASellValueOffset": "-10",
+                "DcaASellValueOffset": "-10"
+            },
+            {
+                "MaxPosition": "-2",
+                "ASellValueOffset": "-5",
+                "DcaASellValueOffset": "-5"
+            }
+        ]
+    }
+}

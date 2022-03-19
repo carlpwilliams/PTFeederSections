@@ -1,0 +1,15 @@
+{
+    "HighDcaExposureSafety2Grouping": {
+        //Keeps the bot from over extending when you reach 50% of available dca funds (Safety Protection) (Position Management) 30.06
+        "Condition": "[positions.TotalDcaBoughtCost] >= [positions.DcaBalance] ",
+        "Configs": [
+            {
+                "Override": {
+                    "SellOnlyModeEnabled": "true",
+                    "StickyTimer": "1440",
+                    "Weight": "999"
+                }
+            }
+        ]
+    },
+}

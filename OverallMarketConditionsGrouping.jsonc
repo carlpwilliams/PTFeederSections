@@ -1,0 +1,26 @@
+// sets a snippet that allows us to see what market the pair is in by setting th
+{
+    "OverallMarketConditionsGrouping": {
+		"Condition": "[market.CurrentBaseCoinPrice] - [market.BaseCoinLongSma] > [config.SmaValue] &&  [pair.Volume]>0",
+		"Configs": [
+			{
+				"Name": "Bull",
+				"SmaValue": "0",
+				"Override": {
+					"QBuyStrategyLabel": "OverallBull",
+					"DcaQBuyStrategyLabel": "OverallBull",
+					"Weight": 2
+				}
+			},
+			{
+				"Name": "Bear",
+				"SmaValue": "-100000000",
+				"Override": {
+					"QBuyStrategyLabel": "OverallBear",
+					"DcaQBuyStrategyLabel": "OverallBear",
+					"Weight": 1
+				}
+			}
+		]
+	}
+}

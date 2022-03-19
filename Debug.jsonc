@@ -1,0 +1,16 @@
+{
+    // debug grouping, by adding an item to the condition in this grouping, it will show the value in the active config and, therefore, help you understand what a setting is etc.
+    "DebugGroupingsGrouping": {
+        "Condition": "[pair.Volume] >= [config.Volume] || [market.BaseCoinLongSma]==[market.BaseCoinLongSma] || [market.CurrentBaseCoinPrice]==[market.CurrentBaseCoinPrice] || ([market.CurrentBaseCoinPrice] - [market.BaseCoinLongSma]) ==([market.CurrentBaseCoinPrice] - [market.BaseCoinLongSma])",
+        "Configs": [
+            {
+                "Volume": "1000000", //set to 10000000 for no signals
+                "IgnoreOffsets": "false",
+                "Override": {
+                    "InsertSnippets": "",
+                    "Weight": "1"
+                }
+            }
+        ]
+    }
+}
